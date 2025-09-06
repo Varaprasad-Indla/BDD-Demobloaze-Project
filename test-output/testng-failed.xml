@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [functionaltesting]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Functional testcases(failed)">
+    <classes>
+      <class name="runners.MyTestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- runners.MyTestRunner -->
+    </classes>
+  </test> <!-- Functional testcases(failed) -->
+</suite> <!-- Failed suite [functionaltesting] -->

@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="functionaltesting" verbose="1">
+  <test name="Functional testcases">
+    <classes>
+      <class name="runners.MyTestRunner"/>
+    </classes>
+  </test>
+</suite>

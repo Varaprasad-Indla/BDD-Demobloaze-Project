@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+  <configuration>
+    <!-- report theme -->
+    <theme>dark</theme>
+    <encoding>UTF-8</encoding>
+    <protocol>http</protocol>
+    <documentTitle>Extent</documentTitle>
+    <reportName>Grasshopper Report</reportName>
+    <testViewChartLocation>bottom</testViewChartLocation>
+    
+    <!-- Enable debug logging -->
+    <logging>true</logging>
+
+    <scripts><![CDATA[
+    $(document).ready(function() {
+    });
+    ]]></scripts>
+
+    <styles><![CDATA[
+    ]]></styles>
+  </configuration>
+</extentreports>
