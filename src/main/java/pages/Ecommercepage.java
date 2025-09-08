@@ -1,15 +1,16 @@
 package pages;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class Ecommercepage {
 
     private WebDriver driver;
 
-  
+    
     private By signupLink = By.id("signin2");
     private By signupUsername = By.id("sign-username");
     private By signupPassword = By.id("sign-password");
@@ -40,6 +41,7 @@ public class Ecommercepage {
     private By purchaseButton = By.xpath("//button[text()='Purchase']");
     private By okButton = By.xpath("//button[text()='OK']");
 
+  
     public Ecommercepage(WebDriver driver) {
         this.driver = driver;
     }
@@ -65,7 +67,7 @@ public class Ecommercepage {
         driver.findElement(signupClose).click();
     }
 
- 
+
     public void clickLoginLink() {
         driver.findElement(loginLink).click();
     }
@@ -85,9 +87,20 @@ public class Ecommercepage {
     public void clickLogoutButton() {
         driver.findElement(logoutBtn).click();
     }
+
+    public boolean isLogoutButtonVisible() {
+        try {
+            return driver.findElement(logoutBtn).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+
     public void clickPhonesCategory() {
         driver.findElement(phonesCategory).click();
     }
+
     public void clickLaptopsCategory() {
         driver.findElement(laptopsCategory).click();
     }
@@ -95,9 +108,23 @@ public class Ecommercepage {
     public void clickMonitorsCategory() {
         driver.findElement(monitorsCategory).click();
     }
+
+    public boolean tryClickCategory(String category) {
+        try {
+            WebElement categoryElement = driver.findElement(By.linkText(category));
+            categoryElement.click();
+            return true;
+        } catch (Exception e) {
+            System.out.println("Category not found: " + category);
+            return false;
+        }
+    }
+
+
     public void clickProductByName(String productName) {
         driver.findElement(By.linkText(productName)).click();
     }
+
     public void clickAddToCart() {
         driver.findElement(addToCartBtn).click();
     }
@@ -110,9 +137,21 @@ public class Ecommercepage {
         driver.findElement(cartLink).click();
     }
 
+    public void removeAllItemsFromCart() {
+        try {
+            while (true) {
+                WebElement deleteLink = driver.findElement(By.xpath("//a[text()='Delete']"));
+                deleteLink.click();
+                Thread.sleep(1000);
+            }
+        } catch (Exception e) {
+            System.out.println("Cart is now empty.");
+        }
+    }
+
+
     public void clickPlaceOrderButton() {
         driver.findElement(placeOrderBtn).click();
-
     }
 
     public void fillOrderForm(String name, String country, String city, String card, String month, String year) {
@@ -130,7 +169,5 @@ public class Ecommercepage {
 
     public void clickOkButton() {
         driver.findElement(okButton).click();
-      
     }
-   
 }

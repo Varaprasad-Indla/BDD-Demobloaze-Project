@@ -1,5 +1,4 @@
 Feature: DemoBlaze eCommerce Application
-
   @Sanity
   Scenario: Complete purchase flow from signup to logout
     Given the user launches the DemoBlaze application

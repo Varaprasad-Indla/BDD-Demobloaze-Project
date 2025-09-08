@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
     features = {"src/test/resources/Features/Ecommerce.feature"},
     glue = {"StepDefinitions", "Hooks"},
-    tags = "@Sanity",
+    tags = "@Negative",
     		plugin = {
     			    "pretty",
     			    "json:target/cucumber.json",
